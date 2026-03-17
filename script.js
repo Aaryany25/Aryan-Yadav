@@ -130,27 +130,54 @@ function loadImage(index) {
   }
 }
 function startAnimation() {
-  // console.log("hello")
-   let tl = gsap.timeline({
+  let tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".parent",
-      start: "top top",
-      pin:true,
+      start: "top top",      // Start when the top of parent hits top of viewport
+      end: "bottom bottom",  // End when the bottom of parent hits bottom of viewport
+      pin: ".child",         // Pin the inner container
       scrub: 2,
-      markers: true,
+      // markers: true,
     },
   });
-  tl.from("#frames",{
-  scale:0.9,
-  duration:0.3,
-  },0)
+
+  tl.from("#frames", {
+    scale: 0.9,
+    duration: 0.3,
+  }, 0);
+
   tl.to(frames, {
-    currentIndex : frames.maxIndex,
+    currentIndex: frames.maxIndex,
     onUpdate: function () {
       loadImage(Math.floor(frames.currentIndex));
     },
-  },0);
+  }, 0);
 }
+// function startAnimation() {
+//   // console.log("hello")
+//    let tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".parent",
+//       start: "top center",
+//       end: "+=100%",
+//       // pin:true,
+//     // pinType:fixed,
+//       // pinSpacing:false,
+//       scrub: 2,
+//       markers: true,
+//     },
+//   });
+//   tl.from("#frames",{
+//   scale:0.9,
+//   duration:0.3,
+//   },0)
+//   tl.to(frames, {
+//     currentIndex : frames.maxIndex,
+//     onUpdate: function () {
+//       loadImage(Math.floor(frames.currentIndex));
+//     },
+//   },0);
+// }
 
     //         function startAnimation(){
     //             let tl = gsap.timeline({
