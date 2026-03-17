@@ -6,37 +6,43 @@
     <title>Portfolio </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000; }
+        body { font-family: 'Inter', sans-serif; background-color: #F8FA8B; color: #000; }
         .tracking-tighter-extra { tracking-spacing: -0.05em; }
+        .share-tech-mono-regular {
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="flex justify-between items-center px-6 py-6 md:px-12">
-        <div class="font-black text-3xl uppercase tracking-tighter">AY</div>
-        <div class="flex items-center gap-2 border border-black/10 rounded-full px-3 py-1 text-[12px] font-bold uppercase">
-            <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-            Available For Work
+    <nav class="flex justify-between items-center px-10 py-10 md:px-12">
+        <div class="font-black text-4xl uppercase tracking-tighter pl-5">AY</div>
+        <div class="flex items-center gap-2 border border-black/10 rounded px-3 py-1 text-[24px] font-bold uppercase mr-20">
+            Resume
+            
         </div>
     </nav>
 
     <header class="px-6 md:px-12 mt-16 mb-32 max-w-screen-2xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div class="md:col-span-8">
-                <h1 class="text-7xl md:text-[11rem] font-black leading-[0.8] tracking-tighter uppercase mb-8">
-                    Aryan<br>Yadav
+                <h1 class="text-7xl md:text-[11rem] share-tech-mono-regular leading-[0.8] tracking-tighter uppercase mb-10 mt-10">
+                    Aryan Yadav
                 </h1>
-                <a href="mailto:hello@yume.com" class="text-sm font-medium border-b border-black pb-0.5">aaryany.2505@gmail.com↗</a>
+                <p  class="text-4xl font-semibold pb-0.5 pt-5">Frontend <br> Developer</p>
             </div>
             <div class="md:col-span-4 md:pt-4">
-                <div class="flex flex-col items-end text-right pr-[8vw]">
+                <div class="flex flex-col items-end text-right pr-[6vw]">
                     <img src="logo" 
-                         alt="Profile" class="w-[10vw] h-[10vw] bg-yellow-400  rounded-full object-contain mb-8 object-center pr-2 ">
-                    <p class="text-xl md:text-2xl font-medium leading-tight max-w-xs">
-                        Frontend developer crafting modern,<span class="text-gray-400 italic font-normal"> interactive web experiences </span> with minimal design with 1 years of expertise — based in mumbai, working remote. <br>Let's create!
-                         <!-- Frontend developer crafting modern, interactive web experiences with minimal design — based in Mumbai, working remotely. -->
-                    </p>
+                         alt="Profile" class="w-[25vw] h-[30vw] rounded-full object-contain mb-8 object-center ">
+                  
                 </div>
             </div>
         </div>
