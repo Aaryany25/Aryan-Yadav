@@ -28,13 +28,13 @@
     <h1 class="text-white text-4xl md:text-6xl font-bold tracking-widest ">
       ARYAN YADAV
     </h1>
-    <h2 class="text-white text-center text-6xl  font-bold absolute top-0 left-50 px-[39%]"> A  Y</h2>
+    <h2 class="text-white text-center text-6xl  font-bold absolute top-0 left-50 px-[39%]" id="name"> AY</h2>
   </div>
 </div>
 <div id="main">
 
-    <header class="flex justify-between items-center py-10 md:px-12">
-        <div class="font-black text-4xl uppercase tracking-tighter pl-5">AY</div>
+    <header class="  z-40 flex justify-between items-center py-10 md:px-12">
+        <div class="font-black text-4xl uppercase tracking-tighter pl-5 " id="logo">AY</div>
         <div class="flex items-center gap-2 border border-black/10 rounded px-3 py-1 text-[24px] font-bold uppercase mr-20">
             Resume
             
@@ -202,49 +202,7 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-<script>
-  window.addEventListener("load", () => {
-    const tl = gsap.timeline();
+<script src="script.js"></script>
 
-    // Animate text
-    tl.from("#loader h1", {
-      // opacity: 0,
-      y: 50,
-      duration: 0.5,
-      ease: "power3.out"
-    });
-
-    // Small pause
-    tl.to("#loader h1", {
-      // opacity: 0,
-      y: -60,
-      duration: 0.3,
-      delay: 0.5
-    });
-    tl.from("#loader h2",{
-      opacity: 0,
-      y: 50,
-      duration: 0.5,
-      ease: "power3.out"
-    })
-    tl.to("#loader h2",{
-      opacity:0,
-      y:-20,
-      duration:0.5,
-      delay:2,
-      ease:"power3.out"
-    })
-
-    // Slide loader up
-    tl.to("#loader", {
-      y: "-100%",
-      duration: 1,
-      ease: "power4.inOut"
-    });
-
-    // Remove loader completely
-    tl.set("#loader", { display: "none" });
-  });
-</script>
 </body>
 </html>
