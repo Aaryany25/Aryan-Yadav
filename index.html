@@ -22,11 +22,14 @@
 </head>
 <body class="antialiased">
 <!-- <div id="Loader" class="w-full h-screen bg-black z-10"></div> -->
- <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50 overflow-hidden">
-  <h1 class="text-white text-4xl md:text-6xl font-bold tracking-widest share-tech-mono-regular">
-    ARYAN YADAV
-  </h1>
-  <p>AY</p>
+ <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50 overflow-hidden flex flex-col ">
+  <div class=" w-fit h-14 relative  overflow-hidden">
+
+    <h1 class="text-white text-4xl md:text-6xl font-bold tracking-widest ">
+      ARYAN YADAV
+    </h1>
+    <h2 class="text-white text-center text-6xl  font-bold absolute top-0 left-50 px-[39%]"> A  Y</h2>
+  </div>
 </div>
 <div id="main">
 
@@ -205,19 +208,32 @@
 
     // Animate text
     tl.from("#loader h1", {
-      opacity: 0,
-      // y: 50,
-      duration: 2,
+      // opacity: 0,
+      y: 50,
+      duration: 0.5,
       ease: "power3.out"
     });
 
     // Small pause
     tl.to("#loader h1", {
-      opacity: 0,
-      y: -20,
-      duration: 0.6,
+      // opacity: 0,
+      y: -60,
+      duration: 0.3,
       delay: 0.5
     });
+    tl.from("#loader h2",{
+      opacity: 0,
+      y: 50,
+      duration: 0.5,
+      ease: "power3.out"
+    })
+    tl.to("#loader h2",{
+      opacity:0,
+      y:-20,
+      duration:0.5,
+      delay:2,
+      ease:"power3.out"
+    })
 
     // Slide loader up
     tl.to("#loader", {
