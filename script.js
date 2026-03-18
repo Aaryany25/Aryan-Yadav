@@ -67,18 +67,18 @@
     tl.set("#loader", { display: "none" });
   });
   }
-  PreloadingAnimation()
+
   var canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
    var currentIndex= 0;
-  var  maxIndex = 40;
+  var  maxIndex = 45;
 const images = [];
 let ImageLoaded = 0;
 function preloader() {
   for (var i = 1; i <= maxIndex; i++) {
     // const imgUrl = `./frames/frame_${i.toString().padStart(4, "0")}.jpeg`;
-    const imgUrl = `assets/frames/frame_${i.toString().padStart(4,"0")}.jpeg`
+    const imgUrl = `frames/frame_${i.toString().padStart(4,"0")}.jpeg`
     const img = new Image();
 
     img.src = imgUrl;
@@ -142,7 +142,7 @@ function startAnimation() {
   });
 
   tl.from("#frames", {
-    scale: 0.9,
+    scale: 0.8,
     duration: 0.3,
   }, 0);
 
@@ -153,48 +153,5 @@ function startAnimation() {
     },
   }, 0);
 }
-// function startAnimation() {
-//   // console.log("hello")
-//    let tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".parent",
-//       start: "top center",
-//       end: "+=100%",
-//       // pin:true,
-//     // pinType:fixed,
-//       // pinSpacing:false,
-//       scrub: 2,
-//       markers: true,
-//     },
-//   });
-//   tl.from("#frames",{
-//   scale:0.9,
-//   duration:0.3,
-//   },0)
-//   tl.to(frames, {
-//     currentIndex : frames.maxIndex,
-//     onUpdate: function () {
-//       loadImage(Math.floor(frames.currentIndex));
-//     },
-//   },0);
-// }
-
-    //         function startAnimation(){
-    //             let tl = gsap.timeline({
-    //                 scrollTrigger:{
-    //                 trigger: ".parent",   
-    //                 start:"top top",
-    //                 scrub:3,
-    //                 markers:false
-    //             }
-    //             })
-
-    //                 tl.to(frames,{
-    //  currentIndex : frames.maxIndex,
-    //  onUpdate: function(){
-    //  loadImage(Math.floor(frames.currentIndex))
-    //  }
-    //  })
-
-    //         }
+PreloadingAnimation()
 preloader();
