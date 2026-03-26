@@ -72,13 +72,14 @@
 const context = canvas.getContext("2d");
 
    var currentIndex= 0;
-  var  maxIndex = 45;
+  var  maxIndex = 121;
 const images = [];
 let ImageLoaded = 0;
 function preloader() {
-  for (var i = 1; i <= maxIndex; i++) {
+  for (var i = 0; i <= maxIndex; i++) {
     // const imgUrl = `./frames/frame_${i.toString().padStart(4, "0")}.jpeg`;
-    const imgUrl = `frames/frame_${i.toString().padStart(4,"0")}.jpeg`
+    const imgUrl = `assets/frames/frame_${i.toString().padStart(4,"0")}.jpeg`
+    
     const img = new Image();
 
     img.src = imgUrl;
