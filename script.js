@@ -151,5 +151,18 @@ function startAnimation() {
     },
   }, 0);
 }
+function CursorAnimation() {
+  const cursor = document.querySelector("#crsr");
+
+  document.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.2,
+      ease: "power3.out"
+    });
+  });
+}
+CursorAnimation()
 PreloadingAnimation()
 preloader();
