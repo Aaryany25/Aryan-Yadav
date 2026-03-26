@@ -141,10 +141,7 @@ function startAnimation() {
     },
   });
 
-  tl.from("#frames", {
-    scale: 0.8,
-    duration: 0.3,
-  }, 0);
+  
 
   tl.to(frames, {
     currentIndex: frames.maxIndex,
