@@ -166,3 +166,52 @@ function CursorAnimation() {
 CursorAnimation()
 PreloadingAnimation()
 preloader();
+const cursor = document.getElementById("cursor");
+const trailContainer = document.getElementById("trail");
+
+const trailCount = 12;
+let trail = [];
+
+// create trail dots (with Tailwind classes)
+for (let i = 0; i < trailCount; i++) {
+  const dot = document.createElement("div");
+  dot.className = "fixed w-2 h-2 bg-black rounded-full pointer-events-none z-[998] -translate-x-1/2 -translate-y-1/2";
+  trailContainer.appendChild(dot);
+
+  trail.push({ x: 0, y: 0, el: dot });
+}
+
+let mouse = { x: 0, y: 0 };
+
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function animate() {
+  // main cursor
+  cursor.style.left = mouse.x + "px";
+  cursor.style.top = mouse.y + "px";
+
+  // trail
+  trail.forEach((dot, index) => {
+    const next = trail[index - 1] || mouse;
+
+    dot.x += (next.x - dot.x) * 0.3;
+    dot.y += (next.y - dot.y) * 0.3;
+
+    dot.el.style.left = dot.x + "px";
+    dot.el.style.top = dot.y + "px";
+
+    // fade effect
+    dot.el.style.opacity = index / trail.length;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+// animate();
+Shery.imageEffect(".img", {
+  style:3 /*OR 5 for different variant */,
+  debug: true,
+});
