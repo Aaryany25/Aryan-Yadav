@@ -71,7 +71,7 @@
   var canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
-   var currentIndex= 0;
+   var currentIndex= 7;
   var  maxIndex = 121;
 const images = [];
 let ImageLoaded = 0;
