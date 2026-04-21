@@ -13,10 +13,31 @@
         body { font-family: 'Inter', sans-serif; background-color:#FFFFFF; color: #000; }
         .tracking-tighter-extra { tracking-spacing:-0.05em; }
         .share-tech-mono-regular {
-  font-family: "Share Tech Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
+          font-family: "Share Tech Mono", monospace;
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: black;
+            transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+            z-index: -1;
+        }
+
+        .cta-btn:hover::before {
+            left: 0;
+        }
+
+        .cta-btn:hover {
+            color: white;
+            border-color: black;
+        }
 
     </style>
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
@@ -37,23 +58,30 @@ class="fixed top-0 left-0 w-5 h-5 bg-black rounded-full pointer-events-none z-[9
   <!-- Trail container -->
   <!-- <div id="trail"></div> -->
 <!-- <div id="trail"></div> -->
- <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50 overflow-hidden flex flex-col ">
-  <div class=" w-fit h-14 relative  overflow-hidden">
-
-    <h1 class="text-white text-4xl md:text-6xl font-bold tracking-widest ">
-      ARYAN YADAV
-    </h1>
-    <h2 class="text-white text-center text-6xl  font-bold absolute top-0 left-50 px-[39%]" id="name"> AY</h2>
+ <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50 overflow-hidden">
+  <!-- Background panels for reveal effect -->
+  <div class="loader-panel absolute inset-0 bg-black z-0"></div>
+  
+  <div class="relative z-10 flex flex-col items-center overflow-hidden h-20 md:h-24">
+    <div id="loader-text-wrapper" class="flex flex-col items-center transition-transform duration-500">
+      <h1 class="text-white text-4xl md:text-6xl font-bold tracking-[0.2em] uppercase leading-none h-20 md:h-24 flex items-center">
+        ARYAN YADAV
+      </h1>
+      <div id="loader-logo" class="text-white text-6xl md:text-8xl font-black uppercase leading-none h-20 md:h-24 flex items-center">
+        AY
+      </div>
+    </div>
   </div>
 </div> 
 <div id="main" class="z-10 relative">
 
-    <header class=" z-40 flex justify-between items-center py-10 md:px-12">
-        <div class="font-black text-4xl uppercase tracking-tighter pl-5 " id="logo">AY</div>
-        <!-- <button class="flex items-center gap-2 border border-black/10 rounded px-3 py-1 text-[24px] font-bold uppercase mr-20">
-            Resume
-            
-        </button> -->
+    <header class=" z-40 flex justify-between items-center py-6 md:py-10 px-6 md:px-12">
+        <div class="font-black text-2xl md:text-4xl uppercase tracking-tighter" id="logo"></div>
+        <div class="flex items-center gap-4">
+            <a href="mailto:aryanyadav2505@gmail.com" class="cta-btn group relative overflow-hidden border border-black/20 rounded-full px-6 py-2 text-sm md:text-base font-bold uppercase transition-all duration-300 hover:bg-black hover:text-white">
+                <span class="relative z-10">Work with me</span>
+            </a>
+        </div>
     </header>
 
     <section class="px-6 md:px-12 mt-16 mb-32 max-w-screen-2xl mx-auto ">
@@ -156,76 +184,83 @@ class="fixed top-0 left-0 w-5 h-5 bg-black rounded-full pointer-events-none z-[9
   
 
 </section>
- <section class="px-4 sm:px-6 md:px-12 mb-24 md:mb-40 max-w-screen-2xl mx-auto">
-
-  <!-- Heading -->
-  <div class="flex justify-between items-end pb-4 mb-10 md:mb-16">
-    <h2 class="text-4xl sm:text-5xl md:text-7xl font-bold uppercase">
-      About Me
-    </h2>
-  </div>
-
-  <!-- Content -->
-  <div class="grid grid-cols-1 md:grid-cols-8 gap-8 md:gap-12">
-
-    <!-- Text Content -->
-    <div class="md:col-span-7 flex flex-col gap-6 md:gap-[3vw]">
-
-      <!-- Main Line -->
-      <p class="text-xl sm:text-2xl md:text-5xl font-medium leading-tight text-gray-300 px-2 sm:px-3">
-        <span class="textSplit text-black block">
-          I collaborate with businesses of all sizes worldwide, using the latest technologies.
-        </span>
-      </p>
-
-      <!-- Description -->
-      <div class=" flex flex-col gap-3">
-       <p class="text-sm sm:text-base md:text-xl w-full md:w-4/5 px-2 sm:px-3 ">
-  I build modern, scalable web applications using <img src="assets/logos/react-svgrepo-com.svg" class="w-10 inline" alt="React ">
-   
-   <span><img src="assets/logos/next-js-svgrepo-com.svg " class="w-10 mx-2 inline hover:scale-105"  alt="Next.js"></span>
-    with a growing focus on backend development using <span><img src="assets/logos/node-js-svgrepo-com.svg" class="w-10  inline hover:scale-105 mx-5" alt=""></span>
-  with data bases like 
-   <span><img src="assets/logos/mongodb-svgrepo-com.svg" class="w-10 inline" alt=""></span>
- and
-   <span><img src="assets/logos/pgsql-svgrepo-com.svg" class="w-10 mx-10 inline hover:scale-105"  alt=""></span>
-     leveraging tools like 
-   <span><img src="assets/logos/light-prisma-svgrepo-com.svg" class="w-10 mx-2 inline hover:scale-105"  alt=""></span>
-      and 
-   <span><img src="assets/logos/mongoose-svgrepo-com.svg" class="w-10 mx-2 inline hover:scale-105"  alt=""></span>
-
-</p>
-
-<p class="text-sm sm:text-base md:text-xl px-2 sm:px-3 mt-5">
-  I create smooth, high-performance user experiences using GSAP
-   <span><img src="assets/logos/greensock-svgrepo-com.svg" class="w-10 inline"  alt=""></span>
-   and Framer Motion 
-   <span><img src="assets/logos/framer-svgrepo-com.svg" class="w-10 mx-2 inline hover:scale-105"  alt=""></span>
-   for interactive animations.
-</p>
-        <div class="flex gap-5  text-2xl px-2 mt-10">
-          
-            <a href="https://github.com/Aaryany25">Github</a>
-            <a href="https://www.linkedin.com/in/aryan-yadav25/">LinkedIn</a>
-            <a href="https://x.com/Aaryann2505">X</a>
-          
+ <section class="px-6 md:px-12 mb-32 md:mb-48 max-w-screen-2xl mx-auto border-t border-black/5 pt-24">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24">
+    
+    <!-- Title & Navigation -->
+    <div class="md:col-span-4 lg:col-span-3">
+      <h2 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-12">
+        About <br> Me
+      </h2>
+      
+      <div class="space-y-4 mt-8">
+        <p class="text-xs uppercase tracking-widest font-black text-black/30">Connect</p>
+        <div class="flex flex-col gap-3">
+          <a href="https://github.com/Aaryany25" class="text-xl font-medium hover:translate-x-2 transition-transform duration-300 flex items-center gap-2 group">
+            GitHub <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-yadav25/" class="text-xl font-medium hover:translate-x-2 transition-transform duration-300 flex items-center gap-2 group">
+            LinkedIn <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </a>
+          <a href="https://x.com/Aaryann2505" class="text-xl font-medium hover:translate-x-2 transition-transform duration-300 flex items-center gap-2 group">
+            X <span class="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+          </a>
         </div>
       </div>
-
     </div>
 
+    <!-- Content -->
+    <div class="md:col-span-8 lg:col-span-9 flex flex-col gap-16">
+      <div class="max-w-4xl">
+        <h3 class="text-2xl md:text-5xl font-medium leading-tight mb-8">
+          I collaborate with businesses of all sizes worldwide, building modern, scalable web applications using the latest technologies.
+        </h3>
+        <p class="text-lg md:text-xl text-black/60 leading-relaxed">
+          I focus on creating high-performance user experiences with smooth, interactive animations. My expertise spans across the entire frontend ecosystem and deep into modern backend solutions.
+        </p>
+      </div>
+
+      <!-- Tech Stack Grid -->
+      <div class="space-y-8">
+        <p class="text-xs uppercase tracking-widest font-black text-black/30">Tech Stack</p>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 items-center">
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/react-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="React">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">React</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/next-js-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="Next.js">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">Next.js</span>
+          </div>
+           <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/node-js-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="Node.js">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">Node.js</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/mongodb-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="MongoDB">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">MongoDB</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/pgsql-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="PostgreSQL">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">Postgres</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/light-prisma-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="Prisma">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">Prisma</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/mongoose-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="Mongoose">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">Mongoose</span>
+          </div>
+          <div class="group flex flex-col items-center gap-2">
+            <img src="assets/logos/greensock-svgrepo-com.svg" class="w-10 h-10 grayscale group-hover:grayscale-0 transition-all duration-300" alt="GSAP">
+            <span class="text-[10px] uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity">GSAP</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-    
-   
-
-   
-<!-- <section class="parent bg-neutral-100 relative  w-full relative top-0 left-0  py-10 overflow-hidden" >
-            <div class="child w-full px-20 h-screen  sticky top-0 left-0 absolute -top-1 ">
-                <canvas class="w-full   h-screen  rounded-xl shadow-2xl  " id="frames"></canvas>
-            </div>
-            </section>
-    -->
  <section class="parent bg-neutral-100 relative w-full py-10 overflow-hidden">
   
   <div class="child w-full px-20 h-screen sticky top-0">
@@ -235,14 +270,37 @@ class="fixed top-0 left-0 w-5 h-5 bg-black rounded-full pointer-events-none z-[9
 </section>
 
 </div>
-   <!-- <footer class="bg-black  flex items-end  overflow-hidden sticky bottom-0 left-0">
+ <footer class="bg-black py-20 px-6 md:px-12 overflow-hidden">
+  <div class="marquee-container relative whitespace-nowrap overflow-hidden py-10 flex border-y border-white/10">
+    <div class="marquee-text flex text-[15vw] md:text-[18vw] font-black text-white/5 uppercase select-none leading-none">
+      <span class="px-10">Let’s Connect —</span>
+      <span class="px-10">Let’s Connect —</span>
+      <span class="px-10">Let’s Connect —</span>
+    </div>
+  </div>
 
-  <h1 id="footer-text"
-      class="text-[12vw] font-bold text-white/10 mb-10 select-none uppercase ">
-    Let’s Connect
-  </h1>
+  <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+    <div class="space-y-6">
+      <h3 class="text-white/40 text-sm uppercase tracking-widest font-bold">Inquiries</h3>
+      <a href="mailto:aryanyadav2505@gmail.com" class="text-3xl md:text-5xl text-white font-medium hover:text-red-500 transition-colors duration-300 block">
+        aryanyadav2505@gmail.com
+      </a>
+    </div>
+    <div class="flex flex-col md:items-end space-y-2">
+       <p class="text-white/40 text-sm uppercase tracking-widest font-bold">Location</p>
+       <p class="text-xl text-white italic font-medium">Remote / Worldwide</p>
+    </div>
+  </div>
 
-</footer> -->
+  <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-6 text-white/40 text-sm font-medium">
+    <p>© 2026 Aryan Yadav. All Rights Reserved.</p>
+    <div class="flex gap-8">
+      <a href="https://github.com/Aaryany25" class="hover:text-white transition-colors">GitHub</a>
+      <a href="https://www.linkedin.com/in/aryan-yadav25/" class="hover:text-white transition-colors">LinkedIn</a>
+      <a href="https://x.com/Aaryann2505" class="hover:text-white transition-colors">X</a>
+    </div>
+  </div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -1,72 +1,69 @@
- 
-  function PreloadingAnimation(){
- gsap.registerPlugin(Flip);
+function PreloadingAnimation() {
+  gsap.registerPlugin(Flip);
 
   window.addEventListener("load", () => {
-    const name = document.getElementById("name")
-    const logo = document.getElementById("logo")
+    const loaderTextWrapper = document.querySelector("#loader-text-wrapper");
+    const loaderLogo = document.querySelector("#loader-logo");
+    const targetLogo = document.querySelector("#logo");
+    const loader = document.querySelector("#loader");
+    const loaderPanel = document.querySelector(".loader-panel");
 
     const tl = gsap.timeline();
 
-    // Animate text
+    // 1. Reveal "ARYAN YADAV"
     tl.from("#loader h1", {
-      // opacity: 0,
-      y: 50,
-      duration: 0.5,
-      ease: "power3.out"
-    });
-
-    // Small pause
-    tl.to("#loader h1", {
-      // opacity: 0,
-      y: -60,
-      duration: 0.3,
-      delay: 0.5
-    });
-    tl.from("#loader h2",{
+      y: 100,
       opacity: 0,
-      y: 50,
-      duration: 0.5,
-      ease: "power3.out"
-    })
-//   tl.add(() => {
-//     const state = Flip.getState(name);
-
-//     // Move to header
-//     logo.appendChild(name);
-
-//     Flip.from(state, {
-//         delay:1,
-//       duration: 1,
-//       ease: "power4.inOut",
-//     //   absolute: true,
-    
-//     //   scale: true
-//     });
-//   });
-    
-
-    tl.to("#loader h2",{
-      opacity:0,
-      y:-20,
-      duration:0.5,
-      delay:2,
-      ease:"power3.out"
-    })
-
-    // Slide loader up
-    tl.to("#loader", {
-        opacity:0,
-    //   y: "-100%",
-      duration: 1.5,
-    //   delay:1,
-      ease: "power4.inOut"
+      duration: 1,
+      ease: "power4.out",
     });
 
-    // Remove loader completely
-    tl.set("#loader", { display: "none" });
+    // 2. Slide up to reveal "AY" logo
+    tl.to(loaderTextWrapper, {
+      yPercent: -50,
+      duration: 0.8,
+      delay: 0.5,
+      ease: "power4.inOut",
+    });
+
+    // 3. Flip animation: loader-logo -> target-logo
+    tl.add(() => {
+      const state = Flip.getState(loaderLogo);
+
+      // Preparation for Flip: Move loaderLogo to targetLogo container or position it there
+      // We'll keep it simple by just moving it visually
+      targetLogo.appendChild(loaderLogo);
+      
+      // Style the logo to match Navbar style
+      gsap.set(loaderLogo, { 
+        fontSize: window.innerWidth < 768 ? "1.5rem" : "2.25rem", 
+        height: "auto",
+        color: "black",
+        fontWeight: "900",
+        letterSpacing: "-0.05em"
+      });
+
+      Flip.from(state, {
+        duration: 1.2,
+        ease: "power4.inOut",
+        absolute: true,
+        onComplete: () => {
+            // Ensure any classes or IDs are cleaned up if necessary
+        }
+      });
+    });
+
+    // 4. Background Reveal
+    tl.to(loaderPanel, {
+      yPercent: -100,
+      duration: 1,
+      ease: "power4.inOut",
+    }, "-=1"); // overlapping with Flip
+
+    // 5. Cleanup
+    tl.set(loader, { display: "none" });
   });
-  }
+}
 
   var canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
@@ -213,5 +210,16 @@ function animate() {
 // animate();
 Shery.imageEffect(".img", {
   style:3 /*OR 5 for different variant */,
-  debug: true,
+  debug: false,
 });
+
+function FooterAnimation() {
+  gsap.to(".marquee-text", {
+    xPercent: -33.33,
+    duration: 10,
+    ease: "none",
+    repeat: -1
+  });
+}
+
+FooterAnimation();
