@@ -123,60 +123,69 @@ class="fixed top-0 left-0 w-5 h-5 bg-black rounded-full pointer-events-none z-[9
     </div>
   </div>
 
-  <!-- GRID -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+  <!-- TEXT-DRIVEN BENTO GRID -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[400px]">
 
-    <!-- CARD 1 -->
-    <div class="group">
-      <div class="overflow-hidden shadow-2xl">
-        <img src="assets/work1.jpeg"
-             class="img w-full h-[350px]  object-cover transition duration-500 group-hover:scale-105">
-      </div>
-      <div class="flex justify-between text-xl text-gray-600 mt-3">
-        <span>(01)</span>
-        <span>Ray Ban</span>
-        <span><a href="https://ray-ban-beta.vercel.app/">live</a></span>
-      </div>
-    </div>
+    <!-- CARD 1: Large Featured (2x2) -->
+    <a href="https://ray-ban-beta.vercel.app/" target="_blank" class="group relative overflow-hidden rounded-[3rem] bg-black p-12 md:col-span-2 md:row-span-2 flex flex-col justify-between transition-all duration-500 hover:bg-neutral-900 border border-white/5">
+        <div class="flex justify-between items-start">
+            <span class="share-tech-mono-regular text-white/40 text-xl">(01)</span>
+            <div class="bg-white/10 backdrop-blur-md px-4 py-1 rounded-full text-[10px] text-white/60 uppercase font-black tracking-widest border border-white/10">Featured Project</div>
+        </div>
+        <div>
+            <h3 class="text-6xl md:text-8xl font-black text-white uppercase leading-[0.85] tracking-tighter mb-4 group-hover:scale-[1.02] transition-transform duration-500">
+                Ray <br> Ban
+            </h3>
+            <p class="text-white/40 font-medium uppercase tracking-[0.2em] text-xs">E-Commerce Experience</p>
+        </div>
+        <div class="flex items-center gap-2 text-white font-black uppercase text-sm group-hover:translate-x-2 transition-transform duration-300">
+            View Live <span class="text-xl">↗</span>
+        </div>
+    </a>
 
-    <!-- CARD 2 -->
-    <div class="group">
-      <div class="overflow-hidden shadow-2xl">
-        <img src="assets/work2.jpeg"
-             class="img w-full h-[350px] object-cover transition duration-500 group-hover:scale-105">
-      </div>
-      <div class="flex justify-between text-xl text-gray-600 mt-3">
-        <span>(02)</span>
-        <span>Refokus</span>
-        <span><a href="https://refokus-clone-plum.vercel.app/">Live</a></span>
-      </div>
-    </div>
+    <!-- CARD 2: Wide (2x1) -->
+    <a href="https://refokus-clone-plum.vercel.app/" target="_blank" class="group relative overflow-hidden rounded-[3rem] bg-white p-10 md:col-span-2 md:row-span-1 flex flex-col justify-between transition-all duration-500 hover:bg-neutral-50 border border-black/5 shadow-xl">
+        <div class="flex justify-between items-start">
+            <span class="share-tech-mono-regular text-black/20 text-lg">(02)</span>
+            <div class="bg-black/5 px-4 py-1 rounded-full text-[10px] text-black/40 uppercase font-black tracking-widest">Agency Clone</div>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <h3 class="text-5xl md:text-6xl font-black text-black uppercase leading-none tracking-tighter group-hover:scale-[1.05] transition-transform duration-500">
+                Refokus
+            </h3>
+            <div class="flex items-center gap-2 text-black font-black uppercase text-xs">
+                Launch Site <span class="text-lg">↗</span>
+            </div>
+        </div>
+    </a>
 
-    <!-- CARD 3 -->
-    <div class="group">
-      <div class="overflow-hidden shadow-2xl">
-        <img src="assets/work3.jpeg"
-             class="img w-full h-[350px] object-cover transition duration-500 group-hover:scale-105">
-      </div>
-      <div class="flex justify-between text-xl text-gray-600 mt-3">
-        <span>(03)</span>
-        <span>Two Good Co</span>
-        <span><a href="https://two-good-co-taupe.vercel.app/">Live</a></span>
-      </div>
-    </div>
+    <!-- CARD 3: Small (1x1) -->
+    <a href="https://two-good-co-taupe.vercel.app/" target="_blank" class="group relative overflow-hidden rounded-[3rem] bg-neutral-200 p-8 md:col-span-1 md:row-span-1 flex flex-col justify-between transition-all duration-500 hover:bg-neutral-300 border border-black/5 shadow-inner">
+        <div class="flex justify-between items-start">
+            <span class="share-tech-mono-regular text-black/30 text-base">(03)</span>
+        </div>
+        <div>
+            <h3 class="text-3xl font-black text-black uppercase leading-tight tracking-tighter mb-2">Two Good <br> Co</h3>
+            <p class="text-black/40 font-black uppercase text-[9px] tracking-widest">Creative Hub</p>
+        </div>
+        <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+            <span class="text-lg leading-none">↗</span>
+        </div>
+    </a>
 
-    <!-- CARD 4 -->
-    <div class="group">
-      <div class="overflow-hidden shadow-2xl">
-        <img  src="assets/work5.jpeg"
-             class="img w-full h-[350px] object-cover transition duration-500 group-hover:scale-105">
-      </div>
-      <div class="flex justify-between text-xl text-gray-600 mt-3">
-        <span>(04)</span>
-        <span>Spine India technologies</span>
-        <span><a href="https://spineind.com/">Live</a></span>
-      </div>
-    </div>
+    <!-- CARD 4: Small (1x1) -->
+    <a href="https://spineind.com/" target="_blank" class="group relative overflow-hidden rounded-[3rem] bg-zinc-800 p-8 md:col-span-1 md:row-span-1 flex flex-col justify-between transition-all duration-500 hover:bg-zinc-700 border border-white/10 shadow-xl">
+        <div class="flex justify-between items-start">
+            <span class="share-tech-mono-regular text-white/30 text-base">(04)</span>
+        </div>
+        <div>
+            <h3 class="text-2xl font-black text-white uppercase leading-tight tracking-tighter mb-2">Spine <br> India</h3>
+            <p class="text-white/30 font-black uppercase text-[9px] tracking-widest">Tech Solutions</p>
+        </div>
+        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+            <span class="text-lg leading-none text-white group-hover:text-black">↗</span>
+        </div>
+    </a>
 
   </div>
 
